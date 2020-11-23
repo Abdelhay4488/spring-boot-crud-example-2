@@ -1,0 +1,15 @@
+
+# if you do not want use application properties , you can creat a YML file and add the connection data
+# of the database
+
+#spring:
+#  datasource:
+#    username: root
+#    password: password
+#    url: jdbc:mysql://localhost:3306/javatechie
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
