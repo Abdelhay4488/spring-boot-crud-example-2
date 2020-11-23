@@ -44,6 +44,9 @@ public class ProductService {
     public Product getProductByname(String name){
         return repository.findByName(name);
     }
+    public Product getProductByFullname(String name){
+        return repository.findByFullName(name);
+    }
 
     //Delete Method
     public String deleteProduct(int id){
@@ -61,4 +64,7 @@ public class ProductService {
 
     }
 
+    public Product getProductBynameAndId(String name, int id) {
+        return repository.findByNameAndId(name, id);
+    }
 }

@@ -5,4 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product,Integer> {
     Product findByName(String name);
+    Product findByFullName(String name);
+    Product findByNameAndId(String name, int id);
+
 }

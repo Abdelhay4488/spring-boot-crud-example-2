@@ -41,10 +41,26 @@ public class ProductController {
         return service.getProductById(id);
     }
 
-    @GetMapping("/product/{name}")
+    @GetMapping("/product")
     //Get Product by Name
-    public Product findProductByName(@PathVariable String name){
-        return service.getProductByname(name);
+    public Product findProductByName(
+            @RequestParam(value="name",required = false,defaultValue ="") String name,
+            @RequestParam(value="fullName",required = false,defaultValue ="") String fullName,
+            @RequestParam(value="id",required = false,defaultValue ="0") int id
+    ){
+        if(!name.isEmpty() && id != 0){
+        return service.getProductBynameAndId(name,id);
+        }
+        if(!name.isEmpty()){
+            return service.getProductByname(name);
+        }
+        if(!fullName.isEmpty()){
+            return service.getProductByFullname(fullName);
+        }
+        if(id != 0){
+            return service.getProductById(id);
+        }
+        return null;
     }
 
     // Get a list of Products
